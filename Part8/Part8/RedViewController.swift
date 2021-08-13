@@ -12,7 +12,7 @@ class RedViewController: UIViewController {
     @IBOutlet private weak var valueLabel: UILabel!
     @IBOutlet private weak var slider: UISlider!
 
-    let delegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    let delegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     
     @IBAction func actionSlider(_ sender: UISlider) {
         
@@ -25,11 +25,7 @@ class RedViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        guard let value = delegate.shareValue else {
-            return
-        }
-        
-        valueLabel.text = String(value)
-        slider.value = value
+        valueLabel.text = String(delegate.shareValue)
+        slider.value = delegate.shareValue
     }
 }
